@@ -1,0 +1,6 @@
+Operace_id,Zamestnanec_id,Ucet_id,typ_operace,datum_operace,cislo_zdroj_uctu,cislo_cil_uctu,castka
+1,1,1,Vklad,2023-08-10,123456789,NULL,100
+2,2,2,Vyber,2023-08-11,987654321,NULL,50
+3,3,3,Prevod,2023-08-12,111222333,987654321,300
+4,4,4,Vklad,2023-08-13,444555666,NULL,150
+5,5,5,Vyber,2023-08-14,777888999,NULL,200
