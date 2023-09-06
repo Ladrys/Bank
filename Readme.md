@@ -2,7 +2,7 @@ Bankovní Aplikace - Readme
 
 Vítejte v readme projektu Bankovní Aplikace. Tato readme poskytne přehled projektu, jeho struktury, a klíčových funkcí implementovaných v několika hlavních modulech.
 
-    Struktura Projektu
+Struktura Projektu
 
 Projekt je organizován následujícím způsobem:
 
