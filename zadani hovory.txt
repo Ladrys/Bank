@@ -1,0 +1,27 @@
+Navrhnete databázi pro evidenci telefonnich hovorú a vložte do ni záznamy o hovorech ze souboru
+ K vypracování zadání je treba spinit následujici poradavky:
+1 Databáze bude umožňovat evidenci informaci o telefonnich účtech a telefonnich hovorech.
+2 Zamestnanec můze zakládat a upravovat telefonni účty.
+2.1 Při zalození telefonního účtu se eviduje:
+2.1.1 Jméno a prijmeni zaměstnance, ktery telefonni úcet zakládá.
+2.1.2 Datum vytvořeni telefonniho účtu.
+2.2 Pro kazdého klienta je možné zalozit i více účtú, každé číslo spadá pod konkrétního operátora a tarif.
+2.3 Pro zalození účtu je nutné vlozit:
+2.3.1 Jméno a príimeni maitele účtu.
+2.3.2 Telefonni číslo.
+2.3.3 Operátora, přičemž každý operátor bude mít svůj unikátni název.
+2.3.4 Tarif.
+2.3.5 Počáteni kredit v minutách.
+3 Zaméstnanec můze zobrazit prehled uskutecnench hovorů z evidence.
+3.1 Při zobrazeni uskutečnenych hovorů lze vidět následujici informace:
+3.1.1 Císlo volajíciho.
+3.1.2 Cslo volaného.
+3.1.3 Datum hovoru.
+3.1.4 Délku hovoru v minutách. 
+
+Databáze umoznuje vypsat:
+4.1 Vysi aktuálniho kreditu pro zadané jméno uzivatele (soucet na vsech jeho císlech).
+ 
+4.2 Vsechna telefonni císla a jejich majitele od zadaného operátora, setridená podle tarifu.
+
+5. Databaze umoznuje prechod od jednoho operátora k jinému tak, ze se uzivatelúv údet u jednoho opertátora ukonci a zároven se mu vytvori novy
