@@ -1,54 +1,53 @@
-Bankovní Aplikace - README
+Bankovní Aplikace - Dokumentace
 
-Vítejte v dokumentaci projektu Bankovní Aplikace. Tento README soubor obsahuje podrobný popis projektu, jeho strukturu, použité moduly, funkce a jak jej nastavit a spustit.
-
-Popis Projektu
-
-Projekt Bankovní Aplikace je implementací aplikace pro správu bankovních operací. Aplikace umožňuje spravovat informace o pobočkách, zaměstnancích, klientech, účtech a operacích.¨
-
+Vítejte v dokumentaci projektu Bankovní Aplikace. Tato dokumentace poskytne přehled projektu, jeho struktury, a klíčových funkcí implementovaných v několika hlavních modulech.
 Struktura Projektu
 
 Projekt je organizován následujícím způsobem:
 
-
-Banka/src/
+Banka/
 │
-├── db_connect.py
-├── main.py
-├── ui.py
-└── db_factory.py
+├── src/
+    ├── db_connect.py
+    ├── main.py
+    ├── ui.py
+    └── db_factory.py
+
 
 Moduly
 db_connect.py
 
-Modul db_connect.py obsahuje funkci pro navázání spojení s databází pomocí knihovny mysql.connector.
-
+Modul db_connect.py obsahuje funkce pro navázání spojení s databází pomocí knihovny mysql.connector. Zajišťuje správu spojení s databází.
 main.py
 
 Hlavní modul main.py obsahuje spouštěcí kód aplikace. Zde můžete definovat uživatelské scénáře, volání funkcí z ostatních modulů a interakci s uživatelem.
-
 ui.py
 
 Modul ui.py se stará o uživatelské rozhraní (UI) aplikace. Obsahuje třídu UI, která zajišťuje zobrazování informací a interakci s uživatelem přes příkazový řádek.
-
 db_factory.py
 
 Modul db_factory.py obsahuje implementaci továrního vzoru pro vytváření objektů spojených s databází. Obsahuje třídy pro vytváření poboček, zaměstnanců, klientů, účtů a operací.
+Nastavení
 
-Použití
+Pro správné fungování aplikace je třeba provést následující kroky:
 
     Stáhněte a nainstalujte MySQL s příslušnými adony.
-    Vytvořte připojení k localhostu s následujícími parametry:
+
+    Vytvořte připojení k databázi na localhostu s následujícími parametry:
         Hostname: 127.0.0.1
         Port: 3306
         Uživatelské jméno: root
         Heslo: root
 
     Vytvořte nový SQL dotaz a zkopírujte obsah souboru export_struc.sql z adresáře sql do tohoto dotazu.
+
     Nejprve vytvořte a použijte databázi, poté vytvořte tabulky a nakonec můžete vložit data dle potřeby a spusťte SQL dotaz pro vytvoření pohledů.
+
+Spuštění
 
 Nyní jste připraveni spustit aplikaci. Otevřete terminál ve složce src v rámci projektu pomocí příkazu:
 
+bash
 
 cd Bank\src
 
@@ -56,64 +55,70 @@ A poté spusťte program příkazem:
 
 python main.py
 
-
-
-
 Základní Funkce
 
-Bankovní aplikace obsahuje několik základních funkcí pro práci s daty:
-Klienti
+Bankovní aplikace obsahuje několik základních funkcí pro práci s daty. Následují klíčové funkce pro každý modul:
+Modul db_factory.py
+BaseFactory
 
-    create_klient(jmeno, prijmeni): Vytvoří nového klienta a vloží ho do tabulky "Klient".
-    read_klient(klient_id): Získá záznam o klientovi podle ID z tabulky "Klient".
-    update_klient(klient_id, jmeno, prijmeni): Aktualizuje informace o existujícím klientovi v tabulce "Klient".
-    delete_klient(klient_id): Odstraní klienta z tabulky "Klient".
+Třída BaseFactory slouží k vytváření, čtení, aktualizaci a mazání záznamů v tabulce databáze. Poskytuje následující metody:
 
-Pobočky
+    create_record(*data): Vytvoří nový záznam v tabulce.
+    read_record(record_id): Přečte záznam podle zadaného ID.
+    update_record(record_id, *new_data): Aktualizuje existující záznam.
+    delete_record(record_id): Smaže záznam podle zadaného ID.
+    get_input_data(): Získá uživatelský vstup pro vytvoření nebo aktualizaci záznamu.
 
-    create_pobocka(nazev, adresa): Vytvoří novou pobočku a vloží ji do tabulky "Pobocky".
-    read_pobocka(pobocka_id): Získá záznam o pobočce podle ID z tabulky "Pobocky".
-    update_pobocka(pobocka_id, nazev, adresa): Aktualizuje informace o existující pobočce v tabulce "Pobocky".
-    delete_pobocka(pobocka_id): Odstraní pobočku z tabulky "Pobocky".
+Modul db_connect.py
+DbConnection
 
-Zaměstnanci
+Třída DbConnection zajišťuje spojení s databází. Je implementována jako singleton a poskytuje metody pro získání instance a práci s připojením.
 
-    create_zamestnanec(pobocka_id, ucet_id, jmeno, prijmeni): Vytvoří nového zaměstnance a vloží ho do tabulky "Zamestnanci".
-    read_zamestnanec(zamestnanec_id): Získá záznam o zaměstnanci podle ID z tabulky "Zamestnanci".
-    update_zamestnanec(zamestnanec_id, pobocka_id, ucet_id, jmeno, prijmeni): Aktualizuje informace o existujícím zaměstnanci v tabulce "Zamestnanci".
-    delete_zamestnanec(zamestnanec_id): Odstraní zaměstnance z tabulky "Zamestnanci".
+Modul main.py
+Main
 
-Účty
+Třída Main slouží jako vstupní bod aplikace. Obsahuje statickou metodu main, která spouští aplikaci. Tento modul se používá k inicializaci připojení k databázi a začátku interakce s uživatelem.
 
-    create_ucet(klient_id, cislo_uctu, pocatecni_zustatek, datum_vytvoreni): Vytvoří nový účet a vloží ho do tabulky "Ucty".
-    read_ucet(ucet_id): Získá záznam o účtu podle ID z tabulky "Ucty".
-    update_ucet(ucet_id, klient_id, cislo_uctu, pocatecni_zustatek, datum_vytvoreni): Aktualizuje informace o existujícím účtu v tabulce "Ucty".
-    delete_ucet(ucet_id): Odstraní účet z tabulky "Ucty".
+Modul ui.py
+UI
 
-Operace
+Třída UI implementuje uživatelské rozhraní aplikace. Umožňuje uživatelům vytvářet, číst, aktualizovat a mazat záznamy v databázi prostřednictvím příkazového řádku. Třída UI obsahuje následující metody:
 
-    create_operace(zamestnanec_id, ucet_id, typ_operace, datum_operace, cislo_zdroj_uctu, cislo_cil_uctu, castka): Vytvoří novou operaci a vloží ji do tabulky "Operace".
-    read_operace(operace_id): Získá záznam o operaci podle ID z tabulky "Operace".
-    update_operace(operace_id, zamestnanec_id, ucet_id, typ_operace, datum_operace, cislo_zdroj_uctu, cislo_cil_uctu, castka): Aktualizuje informace o existující operaci v tabulce "Operace".
-    delete_operace(operace_id): Odstraní operaci z tabulky "Operace".
+    set_factory(factory): Nastaví továrnu pro práci s konkrétní tabulkou.
+    table_menu(): Zobrazuje hlavní menu pro výběr akce nad vybranou tabulkou. Umožňuje vytvářet, číst, aktualizovat a mazat záznamy, stejně jako se vrátit zpět do hlavního menu.
 
-Tyto základní funkce umožňují vytvářet, číst, aktualizovat a mazat záznamy v různých tabulkách v rámci bankovní aplikace. Každá funkce je zaměřena na specifickou část databáze, a tím umožňuje efektivně spravovat informace o klientech, pobočkách, zaměstnancích, účtech a operacích.
+Výjimky
 
+db_factory.py
 
-Program vyžaduje ošetření několika výjimek. Dále je potřeba pro lepší zabezpečení aplikace dodělat login, který poskytne přihlášeným uživatelům práva k manipulaci s konkréními tabulkami. 
-Např. klient který chce otevřít účet, ho neotevre, ale otevře ho zaměstnanec a až pak může dělat crud funkce na přeposílání peněz. 
+    V tomto modulu jsou implementovány výjimky pro zpracování nesrovnalostí v datech a s databází.
 
+db_connect.py
 
+    Modul db_connect.py zajišťuje spojení s databází a může generovat výjimku v případě selhání spojení.
 
+main.py
 
+    V tomto modulu je vtupní bod do aplikace, ale výjimky zde nejsou implementovány.
 
+ui.py
+
+    Tento modul také neobsahuje implementaci výjimek, ale může generovat výjimky v případě, že uživatel zadal neplatnou volbu nebo pokud došlo k chybám při interakci s databází.
+
+Závěr
+
+Pro dokončení aplikace je třeba udělat několik věcí. Prvně, je důležité přidat zpracování výjimek. To znamená, že bychom měli řešit situace, kdy se něco nepovede, například při komunikaci s databází.
+
+Dále by bylo rozumné přidat funkci přihlášení, aby se zajistilo, že pouze oprávnění uživatelé budou mít přístup k určitým akcím, jako je otevření účtu. Tím se zvýší bezpečnost a zamezí se nepovoleným operacím.
+
+Celkově by mělo dojít k vylepšení uživatelského rozhraní, aby bylo snazší a příjemnější používat aplikaci. Tyto kroky by měly pomoci k tomu, aby aplikace lépe fungovala a byla více užitečná pro uživatele.
 
 Autor
 
-    Jméno: Michal Ladra
-    Třída: C4b
-    Telefon: +420 773 615 534
-    Email: ladra@spsejecna.cz
-    Škola: SPŠE Ječná, Praha 2
+Jméno: Michal Ladra
+Třída: C4b
+Telefon: +420 773 615 534
+Email: ladra@spsejecna.cz
+Škola: SPŠE Ječná, Praha 2
 
 Děkuji za použití mé aplikace a přeji vám úspěšné zvládnutí bankovních operací!
