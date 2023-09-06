@@ -46,9 +46,9 @@ Spuštění
 Nyní jste připraveni spustit aplikaci. Otevřete terminál ve složce src v rámci projektu pomocí příkazu:
 
 
-cd Bank\src
-
-A poté spusťte program příkazem: python main.py
+    cd Bank\src
+    
+        A poté spusťte program příkazem: python main.py
 
 
 
