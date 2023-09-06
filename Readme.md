@@ -15,16 +15,13 @@ Banka/
 
 
 Moduly
-db_connect.py
 
 Modul db_connect.py obsahuje funkce pro navázání spojení s databází pomocí knihovny mysql.connector. Zajišťuje správu spojení s databází.
 main.py
 
 Hlavní modul main.py obsahuje spouštěcí kód aplikace. Zde můžete definovat uživatelské scénáře, volání funkcí z ostatních modulů a interakci s uživatelem.
-ui.py
 
 Modul ui.py se stará o uživatelské rozhraní (UI) aplikace. Obsahuje třídu UI, která zajišťuje zobrazování informací a interakci s uživatelem přes příkazový řádek.
-db_factory.py
 
 Modul db_factory.py obsahuje implementaci továrního vzoru pro vytváření objektů spojených s databází. Obsahuje třídy pro vytváření poboček, zaměstnanců, klientů, účtů a operací.
 Nastavení
