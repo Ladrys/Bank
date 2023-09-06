@@ -88,19 +88,19 @@ Výjimky
 
 db_factory.py
 
-    V tomto modulu jsou implementovány výjimky pro zpracování nesrovnalostí v datech a s databází.
+ V tomto modulu jsou implementovány výjimky pro zpracování nesrovnalostí v datech a s databází.
 
 db_connect.py
 
-    Modul db_connect.py zajišťuje spojení s databází a může generovat výjimku v případě selhání spojení.
+ Modul db_connect.py zajišťuje spojení s databází a může generovat výjimku v případě selhání spojení.
 
 main.py
 
-    V tomto modulu je vtupní bod do aplikace, ale výjimky zde nejsou implementovány.
+ V tomto modulu je vtupní bod do aplikace, ale výjimky zde nejsou implementovány.
 
 ui.py
 
-    Tento modul také neobsahuje implementaci výjimek, ale může generovat výjimky v případě, že uživatel zadal neplatnou volbu nebo pokud došlo k chybám při interakci s databází.
+ Tento modul také neobsahuje implementaci výjimek, ale může generovat výjimky v případě, že uživatel zadal neplatnou volbu nebo pokud došlo k chybám při interakci s databází.
 
 Závěr
 
