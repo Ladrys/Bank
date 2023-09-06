@@ -5,13 +5,13 @@ Struktura Projektu
 
 Projekt je organizován následujícím způsobem:
 
-Banka/
-│
-├── src/
-    ├── db_connect.py
-    ├── main.py
-    ├── ui.py
-    └── db_factory.py
+    Banka/
+    │
+    ├── src/
+        ├── db_connect.py
+        ├── main.py
+        ├── ui.py
+        └── db_factory.py
 
 
 Moduly
