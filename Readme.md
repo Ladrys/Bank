@@ -53,7 +53,7 @@ A poté spusťte program příkazem:
 
 python main.py
 
-    Základní Funkce
+Základní Funkce
 
 Bankovní aplikace obsahuje několik základních funkcí pro práci s daty. Následují klíčové funkce pro každý modul:
 
