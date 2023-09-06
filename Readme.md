@@ -1,7 +1,8 @@
-Bankovní Aplikace - Dokumentace
+Bankovní Aplikace - Readme
 
-Vítejte v dokumentaci projektu Bankovní Aplikace. Tato dokumentace poskytne přehled projektu, jeho struktury, a klíčových funkcí implementovaných v několika hlavních modulech.
-Struktura Projektu
+Vítejte v readme projektu Bankovní Aplikace. Tato readme poskytne přehled projektu, jeho struktury, a klíčových funkcí implementovaných v několika hlavních modulech.
+
+    Struktura Projektu
 
 Projekt je organizován následujícím způsobem:
 
@@ -14,10 +15,10 @@ Projekt je organizován následujícím způsobem:
         └── db_factory.py
 
 
-Moduly
+    Moduly
 
 Modul db_connect.py obsahuje funkce pro navázání spojení s databází pomocí knihovny mysql.connector. Zajišťuje správu spojení s databází.
-main.py
+
 
 Hlavní modul main.py obsahuje spouštěcí kód aplikace. Zde můžete definovat uživatelské scénáře, volání funkcí z ostatních modulů a interakci s uživatelem.
 
@@ -40,7 +41,7 @@ Pro správné fungování aplikace je třeba provést následující kroky:
 
     Nejprve vytvořte a použijte databázi, poté vytvořte tabulky a nakonec můžete vložit data dle potřeby a spusťte SQL dotaz pro vytvoření pohledů.
 
-Spuštění
+    Spuštění
 
 Nyní jste připraveni spustit aplikaci. Otevřete terminál ve složce src v rámci projektu pomocí příkazu:
 
@@ -52,9 +53,10 @@ A poté spusťte program příkazem:
 
 python main.py
 
-Základní Funkce
+    Základní Funkce
 
 Bankovní aplikace obsahuje několik základních funkcí pro práci s daty. Následují klíčové funkce pro každý modul:
+
 Modul db_factory.py
 BaseFactory
 
@@ -84,7 +86,7 @@ Třída UI implementuje uživatelské rozhraní aplikace. Umožňuje uživatelů
     set_factory(factory): Nastaví továrnu pro práci s konkrétní tabulkou.
     table_menu(): Zobrazuje hlavní menu pro výběr akce nad vybranou tabulkou. Umožňuje vytvářet, číst, aktualizovat a mazat záznamy, stejně jako se vrátit zpět do hlavního menu.
 
-Výjimky
+    Výjimky
 
 db_factory.py
 
@@ -102,7 +104,7 @@ ui.py
 
  Tento modul také neobsahuje implementaci výjimek, ale může generovat výjimky v případě, že uživatel zadal neplatnou volbu nebo pokud došlo k chybám při interakci s databází.
 
-Závěr
+    Závěr
 
 Pro dokončení aplikace je třeba udělat několik věcí. Prvně, je důležité přidat zpracování výjimek. To znamená, že bychom měli řešit situace, kdy se něco nepovede, například při komunikaci s databází.
 
@@ -110,7 +112,7 @@ Dále by bylo rozumné přidat funkci přihlášení, aby se zajistilo, že pouz
 
 Celkově by mělo dojít k vylepšení uživatelského rozhraní, aby bylo snazší a příjemnější používat aplikaci. Tyto kroky by měly pomoci k tomu, aby aplikace lépe fungovala a byla více užitečná pro uživatele.
 
-Autor
+    Autor
 
 Jméno: Michal Ladra
 Třída: C4b
