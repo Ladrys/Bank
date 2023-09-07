@@ -1,0 +1,16 @@
+DS - Praktická zkouška č. 2
+
+Galerie
+Zadání:
+Databáze pro evidenci obrazů a jejich zápůjček do galerií.
+Funkční požadavky:
+1. Uživatel může evidovat informace o galeriích, malířích, obrazech a stylech, ve kterých jsou obrazy namalovány.
+2. Obraz je namalován vždy jedním malířem a v jednom konkrétním stylu.
+3. Uživatel může vložit obraz, při vložení je požadováno jméno obrazu, jméno malíře, styl, rok vytvoření.
+4. Databáze bude umožňovat výpis všech uměleckých stylů, ve kterých maloval zadaný malíř.
+5. Databáze umožňuje vypsat všechny malíře a jejich obrazy, kteří malovali v určitém zadaném stylu.
+6. Obrazy jsou zapůjčovány do galerií na určitou dobu (od- do)
+7. U každé galerie se evidují kontaktní údaje.
+8. Při vytvoření zápůjčky se eviduje název obrazu, název galerie, které se obraz zapůjčuje, datum od kdy a datum do kdy je obraz zapůjčen.
+9. databáze umožňuje vypsat všechny obrazy, zapůjčené k určitému datu podle galerií.
+10. Je umožněn výpis všech obrazů (včetně malíře a stylu), které si lze zapůjčit (tzn., nejsou teď půjčené).
