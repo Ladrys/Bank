@@ -1,0 +1,57 @@
+-- Vytvoření tabulky Majitelé
+CREATE TABLE Majitele (
+    owner_id INT PRIMARY KEY,
+    jmeno_majitele VARCHAR(255),
+    adresa VARCHAR(255),
+    kontakt VARCHAR(255)
+);
+
+-- Vytvoření tabulky Plavidla
+CREATE TABLE Plavidla (
+    plavidlo_id INT PRIMARY KEY,
+    typ VARCHAR(50),
+    podtyp VARCHAR(50),
+    pocet_mist INT,
+    unikatni_jmeno_lode VARCHAR(255) UNIQUE,
+    majitel_id INT,
+    FOREIGN KEY (majitel_id) REFERENCES Majitele(owner_id)
+);
+
+-- Vytvoření tabulky Revize
+CREATE TABLE Revize (
+    revize_id INT PRIMARY KEY,
+    plavidlo_id INT,
+    datum_revize DATE,
+    FOREIGN KEY (plavidlo_id) REFERENCES Plavidla(plavidlo_id)
+);
+
+-- Vytvoření tabulky Ceny
+CREATE TABLE Ceny (
+    cena_id INT PRIMARY KEY,
+    plavidlo_id INT,
+    cena DECIMAL(10, 2),
+    od DATE,
+    do DATE,
+    vybaveni VARCHAR(255),
+    FOREIGN KEY (plavidlo_id) REFERENCES Plavidla(plavidlo_id)
+);
+
+-- Vytvoření tabulky Rezervace
+CREATE TABLE Rezervace (
+    rezervace_id INT PRIMARY KEY,
+    datum_od DATE,
+    pocet_dni INT,
+    sleva DECIMAL(5, 2),
+    celkova_cena DECIMAL(10, 2),
+    majitel_kontakt VARCHAR(255),
+    FOREIGN KEY (majitel_kontakt) REFERENCES Majitele(kontakt)
+);
+
+-- Vytvoření tabulky Rezervace_Lodí
+CREATE TABLE Rezervace_Lodi (
+    rezervace_lodi_id INT PRIMARY KEY,
+    rezervace_id INT,
+    plavidlo_id INT,
+    FOREIGN KEY (rezervace_id) REFERENCES Rezervace(rezervace_id),
+    FOREIGN KEY (plavidlo_id) REFERENCES Plavidla(plavidlo_id)
+);
